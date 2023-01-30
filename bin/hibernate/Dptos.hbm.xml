@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 20 ene 2023 12:04:50 by Hibernate Tools 6.1.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="ejemplo" name="hibernate.Dptos" optimistic-lock="none" table="dptos">
+        <id name="idD" type="byte">
+            <column name="idD"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="nom" type="string">
+            <column length="15" name="nom" not-null="true"/>
+        </property>
+        <property name="bloque" type="java.lang.Character">
+            <column length="1" name="bloque"/>
+        </property>
+        <property name="pto" type="java.lang.Float">
+            <column name="pto" precision="6" scale="2"/>
+        </property>
+        <set fetch="select" inverse="true" lazy="true" name="empleadoses" table="empleados">
+            <key>
+                <column name="idD" not-null="true"/>
+            </key>
+            <one-to-many class="hibernate.Empleados"/>
+        </set>
+    </class>
+</hibernate-mapping>

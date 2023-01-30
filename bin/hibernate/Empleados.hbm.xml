@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 20 ene 2023 12:04:50 by Hibernate Tools 6.1.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="ejemplo" name="hibernate.Empleados" optimistic-lock="none" table="empleados">
+        <id name="idE" type="java.lang.Short">
+            <column name="idE"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="hibernate.Dptos" fetch="select" name="dptos">
+            <column name="idD" not-null="true"/>
+        </many-to-one>
+        <property name="apellido" type="string">
+            <column length="15" name="apellido" not-null="true"/>
+        </property>
+        <property name="dir" type="string">
+            <column length="30" name="dir" not-null="true"/>
+        </property>
+        <property name="fechaAlta" type="date">
+            <column length="10" name="fecha_alta" not-null="true"/>
+        </property>
+        <property name="fechaBaja" type="date">
+            <column length="10" name="fecha_baja"/>
+        </property>
+        <property name="salario" type="float">
+            <column name="salario" not-null="true" precision="6" scale="2"/>
+        </property>
+    </class>
+</hibernate-mapping>
