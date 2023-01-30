@@ -14,9 +14,9 @@ public class baseDatos_clase2 {
 			Scanner sc = new Scanner(System.in);
 			
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			
+
 			Connection conex = DriverManager.getConnection("jdbc:mysql://localhost:3306/ejemplo?serverTimeZone=UTC","root","afuera");
-			
+
 			//Type forward only, sólo lee de izquierda a derecha, no puedo utilizar los métodos
 			//Sensitive es sensible (si haces cambio en la tabla, el dato se va actualizando) y el insensitive (se te queda fija la consulta)
 			//Statement sentencia = conex.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
