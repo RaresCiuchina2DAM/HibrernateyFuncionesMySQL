@@ -11,9 +11,9 @@ CREATE PROCEDURE darDeAltaEmpleado (
 	IN DIR VARCHAR(30),
 	IN SALARIO FLOAT(6,2),
 	IN idE tinyint)
- 
+
  BEGIN
-	
+
     INSERT INTO ejemplo.empleados (apellido, DIR,SALARIO, idE)
 		VALUES (apellido,DIR,current_date(),SALARIO,idE);
         
